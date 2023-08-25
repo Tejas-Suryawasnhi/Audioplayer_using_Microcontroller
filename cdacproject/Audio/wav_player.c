@@ -1,8 +1,6 @@
 /*
  * wav_player.c
  *
- *  Created on: 17 Apr 2020
- *      Author: Mohamed Yaqoob
  */
 
 #include "wav_player.h"

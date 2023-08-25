@@ -51,9 +51,8 @@ I2S_HandleTypeDef hi2s3;
 DMA_HandleTypeDef hdma_spi3_tx;
 
 /* USER CODE BEGIN PV */
-#define WAV_FILE1 "/Song4.wav"
-#define WAV_FILE2 "/Song2.wav"
-#define WAV_FILE3 "/Song3.wav"
+#define WAV_FILE1 "/Song5.wav"
+
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -176,35 +175,6 @@ int main(void)
             }
           }
         }
-        wavPlayer_fileSelect(WAV_FILE2);
-                wavPlayer_play();
-
-                while(!wavPlayer_isFinished())
-                {
-                  wavPlayer_process();
-                  if(HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_0))
-                  {
-                    pauseResumeToggle^=1;
-                    if(pauseResumeToggle)
-                    {
-                      HAL_GPIO_WritePin(GPIOD, GPIO_PIN_14, GPIO_PIN_SET);
-                      wavPlayer_pause();
-                      HAL_Delay(200);
-                    }
-                    else
-                    {
-                      HAL_GPIO_WritePin(GPIOD, GPIO_PIN_14, GPIO_PIN_RESET);
-                      HAL_Delay(1000);
-                      if(HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_0))
-                      {
-                        wavPlayer_stop();
-                      }
-                      {
-                        wavPlayer_resume();
-                      }
-                    }
-                  }
-                }
 
         HAL_GPIO_WritePin(GPIOD, GPIO_PIN_13, GPIO_PIN_RESET);
         HAL_Delay(1000);

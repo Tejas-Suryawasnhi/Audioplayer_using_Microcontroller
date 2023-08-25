@@ -1,8 +1,6 @@
 /*
  * audioI2S.h
  *
- *  Created on: 17 Apr 2020
- *      Author: Mohamed Yaqoob
  */
 
 #ifndef AUDIOI2S_H_
